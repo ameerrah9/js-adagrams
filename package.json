@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "coverage": "open coverage/lcov-report/index.html",
-    "demo-game": "babel-node src/demo.js"
+    "demo-game": "babel-node src/demo.js",
+    "run-game": "babel-node src/adagrams.js"
+
   },
   "repository": {
     "type": "git",
