@@ -100,7 +100,7 @@ export const scoreWord = (word) => {
   const input_array = input.split("");
   const n = input.length;
   let score = 0;
-  
+
   for (let i = 0; i < n; i++) {
     let letter = input_array[i];
     if (alphabet.includes(letter)) {
@@ -116,5 +116,34 @@ export const scoreWord = (word) => {
 };
 
 export const highestScoreFrom = (words) => {
-  // Implement this method for wave 4
+  const n = words.length;
+  let winner = {
+    word: "",
+    score: 0,
+  };
+
+  for (let i = 0; i < n; i++) {
+    if (scoreWord(words[i]) > winner.score) {
+      winner = {
+        word: words[i],
+        score: scoreWord(words[i]),
+      };
+      //address the tiebreaker
+    } else if (scoreWord(words[i]) === winner.score) {
+      if (winner.word.length === 10) {
+        winner = winner;
+      } else if (words[i].length === 10) {
+        winner = {
+          word: words[i],
+          score: scoreWord(words[i]),
+        };
+      } else if (words[i].length < winner.word.length) {
+        winner = {
+          word: words[i],
+          score: scoreWord(words[i]),
+        };
+      }
+    }
+  }
+  return winner;
 };
