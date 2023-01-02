@@ -64,7 +64,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 
 // Create a variable to store the letters pool
 // Created by the distribution of letters in the letterCounts object
-let letterPool = [];
+let letterPool: string[] = [];
 
 // For each letter in the alphabet array 
 // Add the letter to the letter pool by the repeated 
@@ -85,7 +85,7 @@ alphabet.forEach(function (letter) {
 // Create User's hand to draw letters from
 export const drawLetters = () => {
   // Create a variable to store the letters that the user draws
-  let hand = [];
+  let hand: string[] = [];
   // Create a copy of the letter pool using the spread operator
   // This is to prevent the letter pool from being mutated
   let letterPoolCopy = [...letterPool];
